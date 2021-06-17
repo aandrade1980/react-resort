@@ -1,32 +1,32 @@
-import React, { Component } from "react";
-import { FaCocktail, FaHiking, FaShuttleVan, FaBeer } from "react-icons/fa";
+import React, { Component } from 'react';
+import { FaCocktail, FaHiking, FaShuttleVan, FaBeer } from 'react-icons/fa';
 // Components
-import Title from "./Title";
+import Title from './Title';
 
 export default class Services extends Component {
   state = {
     services: [
       {
         icon: <FaCocktail />,
-        title: "Free cocktails",
-        info: "There are many variations of passages of Lorem Ipsum available"
+        title: 'Free cocktails',
+        info: 'There are many variations of passages of Lorem Ipsum available',
       },
       {
         icon: <FaHiking />,
-        title: "Hiking",
-        info: "There are many variations of passages of Lorem Ipsum available"
+        title: 'Hiking',
+        info: 'There are many variations of passages of Lorem Ipsum available',
       },
       {
         icon: <FaShuttleVan />,
-        title: "Shuttle Van",
-        info: "There are many variations of passages of Lorem Ipsum available"
+        title: 'Shuttle Van',
+        info: 'There are many variations of passages of Lorem Ipsum available',
       },
       {
         icon: <FaBeer />,
-        title: "Strongest Beer",
-        info: "There are many variations of passages of Lorem Ipsum available"
-      }
-    ]
+        title: 'Strongest Beer',
+        info: 'There are many variations of passages of Lorem Ipsum available',
+      },
+    ],
   };
 
   render() {

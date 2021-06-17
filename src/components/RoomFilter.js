@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import { RoomContext } from "../Context";
-import Title from "../components/Title";
+import React, { useContext } from 'react';
+import { RoomContext } from '../Context';
+import Title from '../components/Title';
 
 const getUniqueValues = (rooms, value) => [
-  ...new Set(rooms.map(room => room[value]))
+  ...new Set(rooms.map(room => room[value])),
 ];
 
 export default function RoomFilter({ rooms }) {
@@ -18,12 +18,12 @@ export default function RoomFilter({ rooms }) {
     minSize,
     maxSize,
     breakfast,
-    pets
+    pets,
   } = context;
 
-  const types = getUniqueValues(rooms, "type");
-  const selectTypeOptions = ["all", ...types];
-  const guests = getUniqueValues(rooms, "capacity");
+  const types = getUniqueValues(rooms, 'type');
+  const selectTypeOptions = ['all', ...types];
+  const guests = getUniqueValues(rooms, 'capacity');
 
   return (
     <section className="filter-container">

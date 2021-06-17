@@ -1,10 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
-import "./index.css";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
-import { RoomProvider } from "./Context";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import { RoomProvider } from './Context';
 
 ReactDOM.render(
   <RoomProvider>
@@ -12,7 +12,7 @@ ReactDOM.render(
       <App />
     </Router>
   </RoomProvider>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

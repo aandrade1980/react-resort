@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-function Banner({ children, title, subtitle }) {
+export default function Banner({ children, title, subtitle }) {
   return (
     <div className="banner">
       <h1>{title}</h1>
@@ -10,5 +10,3 @@ function Banner({ children, title, subtitle }) {
     </div>
   );
 }
-
-export default Banner;

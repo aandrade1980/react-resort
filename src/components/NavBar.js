@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import logo from "../images/logo.svg";
-import { FaAlignRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import logo from '../images/logo.svg';
+import { FaAlignRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default class NavBar extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
   };
 
   handleToggle = () => this.setState({ isOpen: !this.state.isOpen });
@@ -23,7 +23,7 @@ export default class NavBar extends Component {
             </button>
           </div>
           <ul
-            className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}
+            className={this.state.isOpen ? 'nav-links show-nav' : 'nav-links'}
           >
             <li>
               <Link to="/">Home</Link>

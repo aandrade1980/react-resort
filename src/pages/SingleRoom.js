@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-import { RoomContext } from "../Context";
-import defaultImg from "../images/room-1.jpeg";
+import { RoomContext } from '../Context';
+import defaultImg from '../images/room-1.jpeg';
 
 // Components
-import Banner from "../components/Banner";
-import StyledHero from "../components/StyledHero";
+import Banner from '../components/Banner';
+import StyledHero from '../components/StyledHero';
 
 export default class SingleRooms extends Component {
   constructor(props) {
     super(props);
     this.state = {
       slug: this.props.match.params.slug,
-      defaultImg
+      defaultImg,
     };
   }
 
@@ -21,7 +21,7 @@ export default class SingleRooms extends Component {
 
   render() {
     const room = this.context.getRoom(this.state.slug);
-    console.log("room => ", room);
+    console.log('room => ', room);
 
     if (!room) {
       return (
@@ -43,7 +43,7 @@ export default class SingleRooms extends Component {
       extras,
       breakfast,
       pets,
-      images: [mainImg, ...defaultImg]
+      images: [mainImg, ...defaultImg],
     } = room;
 
     return (
@@ -74,8 +74,8 @@ export default class SingleRooms extends Component {
                 max capacity:
                 {capacity > 1 ? ` ${capacity} people` : ` ${capacity} person`}
               </h6>
-              <h6>{pets ? "pets allowed" : "not pets allowed"}</h6>
-              <h6>{breakfast && "free breakfast included"}</h6>
+              <h6>{pets ? 'pets allowed' : 'not pets allowed'}</h6>
+              <h6>{breakfast && 'free breakfast included'}</h6>
             </article>
           </div>
         </section>

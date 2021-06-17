@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Map, List } from "immutable";
+import React, { Component } from 'react';
+import { Map, List } from 'immutable';
 
-import Client from "./Contentful";
+import Client from './Contentful';
 
 const RoomContext = React.createContext();
 
@@ -12,7 +12,7 @@ class RoomProvider extends Component {
     featuredRooms: [],
     loading: true,
     // Rooms Filter
-    type: "all",
+    type: 'all',
     capacity: 1,
     price: 0,
     minPrice: 0,
@@ -20,14 +20,14 @@ class RoomProvider extends Component {
     minSize: 0,
     maxSize: 0,
     breakfast: false,
-    pets: false
+    pets: false,
   };
 
   getData = async () => {
     try {
       const response = await Client.getEntries({
-        content_type: "resortRoom",
-        order: "sys.createdAt"
+        content_type: 'resortRoom',
+        order: 'sys.createdAt',
       });
       const rooms = this.formatData(response.items).toJS();
       const featuredRooms = rooms.filter(room => room.featured === true);
@@ -40,7 +40,7 @@ class RoomProvider extends Component {
         loading: false,
         price: maxPrice,
         maxPrice,
-        maxSize
+        maxSize,
       });
     } catch (error) {
       console.log(error);
@@ -65,28 +65,20 @@ class RoomProvider extends Component {
 
   handleChange = evt => {
     const target = evt.target;
-    const value = evt.type === "checkbox" ? target.checked : target.value;
+    const value = evt.type === 'checkbox' ? target.checked : target.value;
     const name = evt.target.name;
 
     this.setState(
       {
-        [name]: value
+        [name]: value,
       },
       this.filterRooms()
     );
   };
 
   filterRooms = () => {
-    let {
-      rooms,
-      type,
-      capacity,
-      price,
-      minSize,
-      maxSize,
-      breakfast,
-      pets
-    } = this.state;
+    let { rooms, type, capacity, price, minSize, maxSize, breakfast, pets } =
+      this.state;
 
     let tempRooms = [...rooms];
     // transform values
@@ -94,7 +86,7 @@ class RoomProvider extends Component {
     capacity = parseInt(capacity);
     price = parseInt(price);
     // filter by type
-    if (type !== "all") {
+    if (type !== 'all') {
       tempRooms = tempRooms.filter(room => room.type === type);
     }
     // filter by capacity
@@ -116,7 +108,7 @@ class RoomProvider extends Component {
       tempRooms = tempRooms.filter(room => room.pets === true);
     }
     this.setState({
-      sortedRooms: tempRooms
+      sortedRooms: tempRooms,
     });
   };
 
@@ -126,7 +118,7 @@ class RoomProvider extends Component {
         value={{
           ...this.state,
           getRoom: this.getRoom,
-          handleChange: this.handleChange
+          handleChange: this.handleChange,
         }}
       >
         {this.props.children}
